@@ -34,19 +34,8 @@
         <input type="submit" value="Search" />
     </form>
 
+    <div th:replace="fragments :: list-jobs"></div>
 
-    <!-- TODO #2 - Loop over jobs map to display all job fields -->
-    <div th:each="result : ${results}">
-    <table class="job-listing">
-
-        <tr th:each="column : ${result}">
-            <td th:text="${column.key}"></td>
-            <td th:text="${column.value}"></td>
-
-        </tr>
-        <hr/>
-    </table>
-    </div>
 </div>
 
 </body>
