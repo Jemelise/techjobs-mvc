@@ -28,6 +28,11 @@
     </div>
 
     <div th:fragment="list-jobs">
+        <div th:if="${results != null}">
+            <h3>
+                <span th:text="${#lists.size(results)}"> </span> <span> Result(s)</span>
+            </h3>
+        </div>
         <div th:each="result : ${results}">
             <table class="job-listing">
 
@@ -36,8 +41,9 @@
                     <td th:text="${column.value}"></td>
 
                 </tr>
-                <hr/>
+
             </table>
+            <hr/>
         </div>
 
     </div>
